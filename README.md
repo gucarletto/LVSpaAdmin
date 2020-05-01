@@ -1,2 +1,2 @@
-# LVSpaAdmin
+# VueSpaAdminLTE
 Vuejs + AdminLTE Spa Template
