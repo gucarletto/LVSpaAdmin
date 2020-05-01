@@ -1,2 +1,2 @@
 # LVSpaAdmin
-Laravel + Vuejs + AdminLTE Spa Template
+Vuejs + AdminLTE Spa Template
