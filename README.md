@@ -1,2 +1,2 @@
-# VueSpaAdminLTE
-Vuejs + AdminLTE Spa Template
+# VueLaravelAdminLTESpaBase
+Vuejs + Laravel + AdminLTE Spa Base Template
