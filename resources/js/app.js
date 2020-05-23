@@ -6,6 +6,14 @@
 
 require('./bootstrap');
 
+//window.Vue = require('vue');
+
+import Vue from 'vue';
+import VueRouter from "vue-router";
+
+window.Vue = Vue;
+Vue.use(VueRouter);
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -14,15 +22,15 @@ require('./bootstrap');
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
+import Form from "./utilities/Form";
+window.Form = Form;
+
+import router from './routes';
+
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-import Vue from 'vue';
-import VueRouter from 'vue-router';
-import VueAxios from 'vue-axios';
-import axios from 'axios';
-import store from './store';
-import routes from './routes'
+//Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -30,19 +38,7 @@ import routes from './routes'
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.use(VueRouter);
-Vue.use(VueAxios, axios);
-
-import Form from './utilities/Form';
-window.Form = Form;
-
-const router = new VueRouter({
-  mode: 'history',
-  routes: routes
-});
-
 const app = new Vue({
     el: '#app',
-    store,
     router
 });

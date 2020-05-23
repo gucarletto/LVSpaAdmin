@@ -14,7 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('{any}', function () {
-  return view('admin');
-})->where('any', '.*');
-Auth::routes();
+Route::get('/admin/', function () {
+  if (Auth::check()) {
+    return view('admin');
+  }
+  return redirect('/login');
+});
+
+Route::get('/users', 'UsersController@index');
+Route::post('/users', 'UsersController@create');
