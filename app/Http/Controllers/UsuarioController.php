@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Usuario;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
-class UsuarioController extends ApiController
+class UsuarioController extends Controller
 {
 
   protected function getModelFromRequest(\Illuminate\Http\Request $request)
@@ -16,6 +18,15 @@ class UsuarioController extends ApiController
     ]);
     return $oUsuario;
   }
+
+  protected function validateRequest(Request $request) {
+    Validator::make($request->all(), [
+      'name' => ['required', 'string', 'max:255'],
+      'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+      'password' => ['required', 'string', 'min:8', 'confirmed'], 
+    ])->validate();
+  }
+
 
   protected function getModelClass()
   {

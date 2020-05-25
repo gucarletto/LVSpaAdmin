@@ -18,8 +18,8 @@ Route::get('/admin/', function () {
   if (Auth::check()) {
     return view('admin');
   }
-  return redirect('/login');
+  return view('admin');
 });
 
-Route::get('/users', 'UsersController@index');
-Route::post('/users', 'UsersController@create');
+Route::get('/usuarios', 'UsuarioController@index');
+Route::post('/usuarios', 'UsuarioController@create');

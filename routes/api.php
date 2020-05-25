@@ -17,11 +17,3 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/usuario', function (Request $request) {
     return $request->user();
 });
-
-Route::get('rede', 'RedeController@index');
-Route::group(['prefix' => 'rede'], function () {
-    Route::post('add', 'RedeController@add');
-    Route::get('edit/{id}', 'RedeController@edit');
-    Route::post('update/{id}', 'RedeController@update');
-    Route::delete('delete/{id}', 'RedeController@delete');
-});

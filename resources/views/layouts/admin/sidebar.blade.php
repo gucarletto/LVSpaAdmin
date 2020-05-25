@@ -31,9 +31,9 @@
                     </router-link>
                 </li>
                 <li class="nav-item">
-                    <router-link tag="a" to="/users" class="nav-link">
+                    <router-link tag="a" to="/usuarios" class="nav-link">
                         <i class="nav-icon fas fa-th"></i>
-                        <p>Users</p>
+                        <p>Usuarios</p>
                     </router-link>
                 </li>
 
